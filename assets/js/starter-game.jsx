@@ -7,6 +7,7 @@ export default function game_init(root) {
 }
 const arr = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H"];
 const shuffledArray = shuffle(arr);
+const game_board_init = gameBoardIniter();
 
 class Starter extends React.Component {
   constructor(props) {
@@ -17,9 +18,9 @@ class Starter extends React.Component {
       score: 0,
       compareFirstValue: "",
       compareFirstId: [],
-      //game_board[]
+      game_board: Array.from(game_board_init)
       
-      game_board: [
+      /*game_board: [
         {id: [0,0], value: shuffledArray[0], showAnswer: false},
         {id: [0,1], value: shuffledArray[1], showAnswer: false},
         {id: [0,2], value: shuffledArray[2], showAnswer: false},
@@ -36,7 +37,7 @@ class Starter extends React.Component {
         {id: [3,1], value: shuffledArray[13], showAnswer: false},
         {id: [3,2], value: shuffledArray[14], showAnswer: false},
         {id: [3,3], value: shuffledArray[15], showAnswer: false}
-      ]
+      ]*/
     }
   }
 
@@ -164,5 +165,16 @@ function shuffle(a) {
 /*
   End
 */
+
+function gameBoardIniter() {
+  let count = 0;
+  let b = [];
+  for (let i = 0; i < 4; ++i) {
+    for (let j = 0; j < 4; ++j) {
+      b[count] = {id: [i, j], value: shuffledArray[count++], showAnswer: false};
+    }
+  }
+  return b;
+}
 
 
