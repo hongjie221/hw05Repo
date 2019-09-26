@@ -2,8 +2,12 @@
 
 @import "~milligram/dist/milligram";
 
-.column > p {
-    padding-top: 10ex;
-    text-align: center;
+.column1 {
+    margin-left: 1px;
+    margin-right: 0%;
+    padding-right: 0%;
+    padding-left: 0%;
 }
+
+
 
