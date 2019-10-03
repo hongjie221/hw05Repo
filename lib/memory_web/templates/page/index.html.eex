@@ -1,7 +1,18 @@
+<script>
+  function click1() {
+    gameName = document.getElementById("gameName").value;
+    link = "/game/" + gameName;
+    location.href = link; 
+  }
+</script>
 
 <div class="row">
   <div class="column">
     <h1 id="index-page">Type a Name</h1>
-    <p><a href="/game/demo">Join "demo"</a></p>
+    <!--<form action="/game/name">
+       Name: <input type="text" name="name">
+      <input type="submit" value="Submit">!-->
+    Name: <input type="text" id="gameName">
+    <button id="button" onclick="click1()">Join Game</button>
   </div>
 </div>
